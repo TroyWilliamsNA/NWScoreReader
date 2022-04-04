@@ -6,9 +6,9 @@ print("successfully read video")
 count = 0
 framessaved = 0
 
-starttime = 90
-endtime = 95
-interval = 60
+starttime = 30
+endtime = 39
+interval = 15
 
 print("starting to read")
 while True:
@@ -18,7 +18,7 @@ while True:
     if ((count > 60 * starttime) and (count < 60 * endtime)):
         if ((count % interval) == 0):   
             cv2.imwrite("./frames/frame%d.jpg" % framessaved, image)     # save frame as JPEG file 
-            print("saving %d", framessaved)
+            #print("saving ", framessaved)
             framessaved += 1  
     count += 1
 print("saved: %d of %d", framessaved, count)
